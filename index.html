@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdul's Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Abdul's Online Shop</h1>
+  </header>
+
+  <section class="products">
+    <div class="product-card">
+      <img src="images/product1.jpg" alt="Product 1">
+      <h3>Red Shoes</h3>
+      <p>₹999</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product-card">
+      <img src="images/product2.jpg" alt="Product 2">
+      <h3>Blue Shirt</h3>
+      <p>₹799</p>
+      <button>Add to Cart</button>
+    </div>
+  </section>
+</body>
+</html>
+<script>
+    // Cart array to hold added products
+    let cart = [];
+  
+    // Select all add to cart buttons
+    const buttons = document.querySelectorAll('.product button');
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const product = button.parentElement;
+        const name = product.querySelector('h3').innerText;
+        const price = product.querySelector('p').innerText;
+        cart.push({ name, price });
+  
+        alert(${name} added to cart!);
+        console.log(cart); // Console pe cart data show karega
+      });
+    });
+  </script>
+  <button onclick="showCart()">View Cart</button>
